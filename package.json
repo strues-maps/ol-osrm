@@ -1,6 +1,6 @@
 {
     "name": "ol-osrm",
-    "version": "1.0.4",
+    "version": "1.0.5",
     "author": "strues-maps <info@strues-maps.lt>",
     "type": "module",
     "keywords": ["OpenLayers", "Routing", "OpenStreetMap", "Open Source Routing Machine", "OSM", "OSRM"],

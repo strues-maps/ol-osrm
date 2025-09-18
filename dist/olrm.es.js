@@ -719,7 +719,7 @@ Please set up your own OSRM server, or use a paid service provider for productio
   }
   route(e, a, i, r) {
     let t, o, d, u;
-    r = Object.assign({}, this.options.routingOptions, r), u = this.options, t = this.buildRouteUrl(e, r), console.log(u), u.requestParameters && (t += Object.keys(u.requestParameters).reduce(
+    r = Object.assign({}, this.options.routingOptions, r), u = this.options, t = this.buildRouteUrl(e, r), u.requestParameters && (t += Object.keys(u.requestParameters).reduce(
       function(h, s, f) {
         return h + (f > 0 ? "&" : "") + s + "=" + window.encodeURIComponent(u.requestParameters[s]);
       },
