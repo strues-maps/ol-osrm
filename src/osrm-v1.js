@@ -1,3 +1,5 @@
+/* eslint-disable prefer-template */
+
 import polyline from '@mapbox/polyline'
 import osrmTextInstructions from 'osrm-text-instructions'
 import Waypoint from './waypoint'
@@ -51,9 +53,9 @@ export default class OSRMv1 {
         if (this.options.requestParameters) {
             url += Object.keys(this.options.requestParameters).reduce(
                 function (carry, param, idx) {
-                    return `${carry +
+                    return carry +
                         (idx > 0 ? '&' : '') +
-                        param  }=${  window.encodeURIComponent(this.options.requestParameters[param])}`;
+                        param + '=' + window.encodeURIComponent(this.options.requestParameters[param]);
                 },
                 url.indexOf('?') >= 0 ? '&' : '?'
             )
@@ -297,21 +299,21 @@ export default class OSRMv1 {
         for (let i = 0; i < waypoints.length; i++) {
             let wp = waypoints[i];
             let lngLat = wp.lngLat;
-            locations.push(`${lngLat[0]  },${  lngLat[1]}`);
+            locations.push(lngLat[0] + ',' + lngLat[1]);
             hints.push(this._hints.locations[this._locationKey(lngLat)] || '');
         }
 
-        return `${this.options.serviceUrl  }/${  this.options.profile  }/${ 
-                locations.join(';')  }?${ 
-                options.geometryOnly ? (options.simplifyGeometry ? '' : 'overview=full') : 'overview=false' 
-                }&alternatives=${  computeAlternative.toString() 
-                }&steps=${  computeInstructions.toString() 
-                }${this.options.useHints ? `&hints=${  hints.join(';')}` : '' 
-                }${options.allowUTurns ? `&continue_straight=${  !options.allowUTurns}` : ''}`;
+        return this.options.serviceUrl + '/' + this.options.profile + '/' +
+                locations.join(';') + '?' +
+                (options.geometryOnly ? (options.simplifyGeometry ? '' : 'overview=full') : 'overview=false') +
+                '&alternatives=' + computeAlternative.toString() +
+                '&steps=' + computeInstructions.toString() +
+                (this.options.useHints ? '&hints=' + hints.join(';') : '') +
+                (options.allowUTurns ? '&continue_straight=' + !options.allowUTurns : '');
     }
 
     _locationKey(location) {
-        return `${location[0]  },${  location[1]}`;
+        return location[0] + ',' + location[1];
     }
 
     _saveHintData(actualWaypoints, waypoints) {

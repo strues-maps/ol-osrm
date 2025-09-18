@@ -35,5 +35,6 @@ class OlrmControl extends Control {
 }
 
 export default {
-    Control: OlrmControl
+    Control: OlrmControl,
+    OSRMv1
 };
