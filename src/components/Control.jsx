@@ -217,6 +217,7 @@ export default class Control extends Component {
                             onClick={(event) => this.addDraggingWaypoint(event.detail.afterWpIndex, event.detail.lngLat)}
                         />
                         <Itinerary
+                            map={props.map}
                             route={route}
                             selected={state.selectedRoute === route}
                             onSelected={() => this.selectRoute(route)}

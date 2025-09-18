@@ -1,5 +1,16 @@
+import ol from 'ol'
 import { Component } from 'preact';
 import { formatDuration, formatDistance } from '../utils'
+import circleImage from '../assets/glyph-circle-icon.png'
+
+const defaultStyle = new ol.style.Style({
+    image: new ol.style.Icon({
+        anchor: [5, 5],
+        anchorXUnits: 'pixels',
+        anchorYUnits: 'pixels',
+        src: circleImage
+    })
+});
 
 export default class Itinerary extends Component {
     constructor(options) {
@@ -7,6 +18,39 @@ export default class Itinerary extends Component {
         this.formatDuration = formatDuration;
         this.formatDistance = formatDistance;
         this.clicked = this.clicked.bind(this);
+        this.onStepSelected = this.onStepSelected.bind(this);
+        this.state = {
+            stepIdx: -1
+        };
+        const map = options.map;
+        
+        this.feature = new ol.Feature({
+            type: 'waypointMarker',
+            geometry: new ol.geom.Point([])
+        });
+        this.feature.setStyle(defaultStyle);
+        this.layer = new ol.layer.Vector({
+            updateWhileInteracting: true,
+            source: new ol.source.Vector({
+                features: [this.feature]
+            })
+        });
+        this.layer.setZIndex(5);
+        map.addLayer(this.layer);
+    }
+
+    shouldComponentUpdate(nextProps, nextState) {
+        if (nextState.stepIdx !== -1) {
+            const step = this.props.route.instructions[nextState.stepIdx];
+            this.feature.getGeometry().setCoordinates(ol.proj.fromLonLat(step.coordinate));
+        } else {
+            this.feature.getGeometry().setCoordinates([]);
+        }
+    }
+
+    componentWillUnmount () {
+        const map = this.props.map;
+        map.removeLayer(this.layer);
     }
 
     clicked () {
@@ -17,9 +61,13 @@ export default class Itinerary extends Component {
         }
 
         return false;
-    };
+    }
 
-    render(props) {
+    onStepSelected(e, i) {
+        this.setState({stepIdx: i});
+    }
+
+    render(props, state) {
         return <div class={(props.selected ? 'routing-alternative routing-selected' : 'routing-alternative')}>
             <div class="routing-header">
                 <h1>
@@ -31,10 +79,10 @@ export default class Itinerary extends Component {
                 </div>
             </div>
             <div class="routing-route-itinerary">
-                <table>
+                <table onMouseOut={(event) => this.onStepSelected(event, -1)}>
                     <tbody>
                         {props.route.instructions.map((instr, i) => (
-                            <tr key={i}>
+                            <tr key={i} class={state.stepIdx === i ? 'selected' : ''} onMouseOver={(event) => this.onStepSelected(event, i)}>
                                 <td>{instr.text}</td>
                                 <td class="distance">{formatDistance(instr.distance, -1)}</td>
                             </tr>

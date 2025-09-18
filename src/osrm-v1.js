@@ -149,6 +149,7 @@ export default class OSRMv1 {
             leg,
             step,
             geometry,
+            coordinate,
             type,
             modifier,
             text,
@@ -167,7 +168,8 @@ export default class OSRMv1 {
             for (j = 0; j < leg.steps.length; j++) {
                 step = leg.steps[j];
                 geometry = this._decodePolyline(step.geometry);
-                result.coordinates.push.apply(result.coordinates, geometry);
+                coordinate = geometry && geometry.length > 0 ? geometry[0] : null;
+                result.coordinates = [...result.coordinates, ...geometry];
                 type = this._maneuverToInstructionType(step.maneuver, i === legCount - 1);
                 modifier = this._maneuverToModifier(step.maneuver);
                 text = stepToText(step);
@@ -187,7 +189,8 @@ export default class OSRMv1 {
                         index,
                         mode: step.mode,
                         modifier,
-                        text
+                        text,
+                        coordinate
                     });
                 }
 

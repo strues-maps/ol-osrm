@@ -40,12 +40,21 @@
     font-size: 12px;
 }
 
+.routing-route-itinerary table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+  
 .routing-route-itinerary td {
     padding: 0.25em;
 }
 
 .routing-route-itinerary td.distance {
     white-space: nowrap;
+}
+
+.routing-route-itinerary .selected td {
+    background: #eee;
 }
 
 .routing-alternative {
