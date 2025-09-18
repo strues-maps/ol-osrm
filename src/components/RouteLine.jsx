@@ -65,7 +65,7 @@ export default class RouteLine extends Component {
         map.forEachFeatureAtPixel(e.pixel, (feature, layer) => {
             if (layer === this.layer) {
                 if (this.props.selected) {
-                    if (this.props.onclick) {
+                    if (this.props.onClick) {
                         const route = this.props.route;
                         const lngLat = ol.proj.toLonLat(e.coordinate);
                         const event = new CustomEvent(
@@ -77,11 +77,11 @@ export default class RouteLine extends Component {
                                 }
                             }
                         );
-                        this.props.onclick(event);
+                        this.props.onClick(event);
                     }
-                } else if (this.props.onselected) {
+                } else if (this.props.onSelected) {
                     const event = new CustomEvent('selected', {detail: { route: this.props.route }});
-                    this.props.onselected(event);
+                    this.props.onSelected(event);
                 }
             }
         });
@@ -105,7 +105,7 @@ export default class RouteLine extends Component {
         if (!this.state.selected) {
             return;
         }
-        if (!this.props.ondragging) {
+        if (!this.props.onDragging) {
             return;
         }
 
@@ -129,7 +129,7 @@ export default class RouteLine extends Component {
                         }
                     }
                 );
-                this.props.ondragging(event);
+                this.props.onDragging(event);
                 e.preventDefault();
             }
         });

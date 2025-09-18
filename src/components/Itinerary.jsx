@@ -11,7 +11,10 @@ export default class Itinerary extends Component {
 
     clicked () {
         const event = new CustomEvent('selected', {detail: { route: this.props.route }});
-        this.props.onselected(event);
+
+        if (this.props.onSelected) {
+            this.props.onSelected(event);
+        }
 
         return false;
     };

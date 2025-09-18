@@ -11,6 +11,9 @@ export default class Control extends Component {
         this.routeInterval = 1000;
         this.waypointsUpdated = false;
         this.lastRouteTimestamp = +new Date();
+        this.waypointsListener = options.onWaypointsUpdate ? options.onWaypointsUpdate : null;
+        this.routesListener = options.onRoutesUpdate ? options.onRoutesUpdate : null;
+
         this.state = {
             waypoints: options.waypoints,
             geocoder: options.geocoder,
@@ -38,6 +41,20 @@ export default class Control extends Component {
 
     routeReceived(err, newRoutes) {
         this.setState({routes: newRoutes, selectedRoute: newRoutes[0]});
+        if (this.routesListener) {
+            setTimeout(
+                () => {
+                    const event = new CustomEvent(
+                        'routesUpdate',
+                        {
+                            detail: {routes: newRoutes, selectedRoute: 0}
+                        }
+                    );
+                    this.routesListener(event);
+                },
+                0
+            );
+        }
     }
 
     dragWaypoint(e, i, dragging) {
@@ -64,12 +81,40 @@ export default class Control extends Component {
                 Math.abs(e.detail.lngLat[0]-waypoint.lngLat[1]) > 0.001
             );
             this.setState(state);
+            if (this.waypointsListener) {
+                setTimeout(
+                    () => {
+                        const event = new CustomEvent(
+                            'waypointsUpdate',
+                            {
+                                detail: {waypoint: waypoints[i], idx: i}
+                            }
+                        );
+                        this.waypointsListener(event);
+                    },
+                    0
+                );
+            }
         }, timeout);
         this.setState({routeDebounce});
     }
 
     selectRoute(route) {
         this.setState({selectedRoute: route});
+        if (this.routesListener) {
+            setTimeout(
+                () => {
+                    const event = new CustomEvent(
+                        'routesUpdate',
+                        {
+                            detail: {routes: this.state.routes, selectedRoute: this.state.routes.indexOf(route)}
+                        }
+                    );
+                    this.routesListener(event);
+                },
+                0
+            );
+        }
     }
 
     setWaypoint(i, data) {
@@ -83,11 +128,25 @@ export default class Control extends Component {
         this.setState({waypoints});
 
         if (waypointsUpdated) {
+            if (this.waypointsListener) {
+                setTimeout(
+                    () => {
+                        const event = new CustomEvent(
+                            'waypointsUpdate',
+                            {
+                                detail: {waypoint: waypoints[i], idx: i}
+                            }
+                        );
+                        this.waypointsListener(event);
+                    },
+                    0
+                );
+            }
             setTimeout(
                 () => {
                     this.props.router.route(this.state.waypoints, this.routeReceived);
                 },
-                250
+                0
             );
         }
     }
@@ -104,6 +163,24 @@ export default class Control extends Component {
         let waypoint = new Waypoint(lngLat);
         waypoints.splice(afterWpIndex + 1, 0, waypoint);
         this.setState({waypoints});
+
+        if (this.waypointsListener) {
+            for (let i = afterWpIndex + 1; i < waypoints.length; i++) {
+                console.log(i);
+                setTimeout(
+                    () => {
+                        const event = new CustomEvent(
+                            'waypointsUpdate',
+                            {
+                                detail: {waypoint: waypoints[i], idx: i}
+                            }
+                        );
+                        this.waypointsListener(event);
+                    },
+                    0
+                );
+            }
+        }
     }
 
     render(props, state) {
@@ -115,15 +192,15 @@ export default class Control extends Component {
                             map={props.map}
                             lngLat={waypoint.lngLat}
                             dragging={state.draggedWaypoint === waypoint}
-                            ondrag={(event) => this.dragWaypoint(event, i, true)}
-                            ondragend={(event) => this.dragWaypoint(event, i)}
+                            onDrag={(event) => this.dragWaypoint(event, i, true)}
+                            onDragEnd={(event) => this.dragWaypoint(event, i)}
                         />
                         { props.geocoder &&
                             <Geocoder
                                 waypoint={waypoint}
                                 geocoder={props.geocoder}
-                                ongeocoded={(event) => this.setWaypoint(i, event.detail)}
-                                onreversegeocoded={(event) => this.setWaypoint(i, event.detail)}
+                                onGeocoded={(event) => this.setWaypoint(i, event.detail)}
+                                onReverseGeocoded={(event) => this.setWaypoint(i, event.detail)}
                             />
                         }
                     </Fragment>
@@ -136,13 +213,13 @@ export default class Control extends Component {
                             map={props.map}
                             route={route}
                             selected={state.selectedRoute === route}
-                            onselected={() => this.selectRoute(route)}
-                            onclick={(event) => this.addDraggingWaypoint(event.detail.afterWpIndex, event.detail.lngLat)}
+                            onSelected={() => this.selectRoute(route)}
+                            onClick={(event) => this.addDraggingWaypoint(event.detail.afterWpIndex, event.detail.lngLat)}
                         />
                         <Itinerary
                             route={route}
                             selected={state.selectedRoute === route}
-                            onselected={() => this.selectRoute(route)}
+                            onSelected={() => this.selectRoute(route)}
                         />
                     </Fragment>
                 ))}

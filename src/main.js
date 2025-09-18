@@ -17,6 +17,9 @@ class OlrmControl extends Control {
         });
 
         options.router = options.router || new OSRMv1(options);
+        options.waypointsListener = options.waypointsListener || null;
+        options.routesListener = options.routesListener || null;
+
         const container = document.createElement('div');
         container.setAttribute("id", "olrm-container");
         render(h(ControlWrapper, options), container);

@@ -68,10 +68,10 @@ export default class Geocoder extends Component {
             }));
 
             if (results.length === 1) {
-                if (component.props.ongeocoded) {
+                if (component.props.onGeocoded) {
                     waypoint.name = results[0];
                     const event = new CustomEvent('geocoded', {detail: results[0]});
-                    component.props.ongeocoded(event);
+                    component.props.onGeocoded(event);
                 }
             } else {
                 component.setState({showSuggestions: true, suggestions: results, selectedIndex: -1, waypoint});
@@ -92,7 +92,7 @@ export default class Geocoder extends Component {
                 5,
                 (results) => {
                     component.state.waypoint.name = results[0].name;
-                    if (component.props.onreversegeocoded) {
+                    if (component.props.onReverseGeocoded) {
                         const event = new CustomEvent(
                             'reversegeocoded',
                             {
@@ -102,7 +102,7 @@ export default class Geocoder extends Component {
                                 }
                             }
                         );
-                        component.props.onreversegeocoded(event);
+                        component.props.onReverseGeocoded(event);
                     }
                 }
             );
@@ -111,9 +111,9 @@ export default class Geocoder extends Component {
 
     selectSuggestion (suggestion) {
         this.setState({showSuggestions: false, suggestions: [], selectedIndex: -1});
-        if (this.props.ongeocoded) {
+        if (this.props.onGeocoded) {
             const event = new CustomEvent('geocoded', {detail: suggestion});
-            this.props.ongeocoded(event);
+            this.props.onGeocoded(event);
         }
     }
 

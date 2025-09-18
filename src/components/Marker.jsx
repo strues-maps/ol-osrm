@@ -74,14 +74,14 @@ export default class Marker extends Component {
     drag (e) {
         this.setCoordinate(e.coordinate);
         const event = new CustomEvent('drag', {detail: { lngLat: ol.proj.toLonLat(e.coordinate) }});
-        this.props.ondrag(event);
+        this.props.onDrag(event);
     };
 
     dragEnd (e) {
         const map = this.props.map;
         map.un('pointerdrag', this.drag, this);
         const event = new CustomEvent('dragend', {detail: { lngLat: ol.proj.toLonLat(e.coordinate) }});
-        this.props.ondragend(event);
+        this.props.onDragEnd(event);
     };
 
     setCoordinate (coordinate) {
