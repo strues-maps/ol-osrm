@@ -46,16 +46,18 @@ export default class OSRMv1 {
         let url;
         let timedOut;
         let waypointsCopy;
+        let generalOptions;
 
         options = Object.assign({}, this.options.routingOptions, options);
+        generalOptions = this.options;
 
         url = this.buildRouteUrl(waypoints, options);
-        if (this.options.requestParameters) {
-            url += Object.keys(this.options.requestParameters).reduce(
+        if (generalOptions.requestParameters) {
+            url += Object.keys(generalOptions.requestParameters).reduce(
                 function (carry, param, idx) {
                     return carry +
                         (idx > 0 ? '&' : '') +
-                        param + '=' + window.encodeURIComponent(this.options.requestParameters[param]);
+                        param + '=' + window.encodeURIComponent(generalOptions.requestParameters[param]);
                 },
                 url.indexOf('?') >= 0 ? '&' : '?'
             )
