@@ -40,6 +40,7 @@ olrm.Control(options)
 | routingOptions.polylinePrecision | integer                   | Optional |
 | routingOptions.useHints          | boolean                   | Optional |
 | routingOptions.language          | string                    | Optional |
+| routingOptions.requestParameters | string                    | Optional |
 
 olrm.OSRMv1(options)
 --------------------
@@ -55,12 +56,15 @@ olrm.OSRMv1(options)
 | routingOptions.polylinePrecision | integer                   | Optional |
 | routingOptions.useHints          | boolean                   | Optional |
 | routingOptions.language          | string                    | Optional |
+| routingOptions.requestParameters | string                    | Optional |
 
 
 Plugin usage
 ============
 Plugin examples are available at `./examples` folder. `index.html` includes
 files from `./dist` folder that is generated using `npm run build` command. 
+
+![route example](examples/example.png)
 
 
 Found a bug?
