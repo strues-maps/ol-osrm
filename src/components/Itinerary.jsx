@@ -36,6 +36,7 @@ export default class Itinerary extends Component {
                         {props.route.instructions.map((instr, i) => (
                             <tr key={i}>
                                 <td>{instr.text}</td>
+                                <td class="distance">{formatDistance(instr.distance, -1)}</td>
                             </tr>
                         ))}
                     </tbody>
