@@ -42,18 +42,18 @@ function le(n) {
   (!n.__d && (n.__d = !0) && P.push(n) && !H.__r++ || de != v.debounceRendering) && ((de = v.debounceRendering) || ke)(H);
 }
 function H() {
-  for (var n, e, a, i, r, t, o, l = 1; P.length; ) P.length > l && P.sort(je), n = P.shift(), l = P.length, n.__d && (a = void 0, i = void 0, r = (i = (e = n).__v).__e, t = [], o = [], e.__P && ((a = C({}, i)).__v = i.__v + 1, v.vnode && v.vnode(a), ie(e.__P, a, i, e.__n, e.__P.namespaceURI, 32 & i.__u ? [r] : null, t, r ?? V(i), !!(32 & i.__u), o), a.__v = i.__v, a.__.__k[a.__i] = a, ze(t, a, o), i.__e = i.__ = null, a.__e != r && $e(a)));
+  for (var n, e, a, i, r, t, o, d = 1; P.length; ) P.length > d && P.sort(je), n = P.shift(), d = P.length, n.__d && (a = void 0, i = void 0, r = (i = (e = n).__v).__e, t = [], o = [], e.__P && ((a = C({}, i)).__v = i.__v + 1, v.vnode && v.vnode(a), ie(e.__P, a, i, e.__n, e.__P.namespaceURI, 32 & i.__u ? [r] : null, t, r ?? V(i), !!(32 & i.__u), o), a.__v = i.__v, a.__.__k[a.__i] = a, ze(t, a, o), i.__e = i.__ = null, a.__e != r && $e(a)));
   H.__r = 0;
 }
-function Ae(n, e, a, i, r, t, o, l, u, d, h) {
+function Ae(n, e, a, i, r, t, o, d, u, l, h) {
   var s, f, m, _, k, g, c, p = i && i.__k || xe, j = e.length;
-  for (u = sa(a, e, p, u, j), s = 0; s < j; s++) (m = a.__k[s]) != null && (f = m.__i == -1 ? U : p[m.__i] || U, m.__i = s, g = ie(n, m, f, r, t, o, l, u, d, h), _ = m.__e, m.ref && f.ref != m.ref && (f.ref && re(f.ref, null, m), h.push(m.ref, m.__c || _, m)), k == null && _ != null && (k = _), (c = !!(4 & m.__u)) || f.__k === m.__k ? u = Ce(m, u, n, c) : typeof m.type == "function" && g !== void 0 ? u = g : _ && (u = _.nextSibling), m.__u &= -7);
+  for (u = sa(a, e, p, u, j), s = 0; s < j; s++) (m = a.__k[s]) != null && (f = m.__i == -1 ? U : p[m.__i] || U, m.__i = s, g = ie(n, m, f, r, t, o, d, u, l, h), _ = m.__e, m.ref && f.ref != m.ref && (f.ref && re(f.ref, null, m), h.push(m.ref, m.__c || _, m)), k == null && _ != null && (k = _), (c = !!(4 & m.__u)) || f.__k === m.__k ? u = Ce(m, u, n, c) : typeof m.type == "function" && g !== void 0 ? u = g : _ && (u = _.nextSibling), m.__u &= -7);
   return a.__e = k, u;
 }
 function sa(n, e, a, i, r) {
-  var t, o, l, u, d, h = a.length, s = h, f = 0;
-  for (n.__k = new Array(r), t = 0; t < r; t++) (o = e[t]) != null && typeof o != "boolean" && typeof o != "function" ? (u = t + f, (o = n.__k[t] = typeof o == "string" || typeof o == "number" || typeof o == "bigint" || o.constructor == String ? G(null, o, null, null, null) : Z(o) ? G(q, { children: o }, null, null, null) : o.constructor == null && o.__b > 0 ? G(o.type, o.props, o.key, o.ref ? o.ref : null, o.__v) : o).__ = n, o.__b = n.__b + 1, l = null, (d = o.__i = da(o, a, u, s)) != -1 && (s--, (l = a[d]) && (l.__u |= 2)), l == null || l.__v == null ? (d == -1 && (r > h ? f-- : r < h && f++), typeof o.type != "function" && (o.__u |= 4)) : d != u && (d == u - 1 ? f-- : d == u + 1 ? f++ : (d > u ? f-- : f++, o.__u |= 4))) : n.__k[t] = null;
-  if (s) for (t = 0; t < h; t++) (l = a[t]) != null && (2 & l.__u) == 0 && (l.__e == i && (i = V(l)), Te(l, l));
+  var t, o, d, u, l, h = a.length, s = h, f = 0;
+  for (n.__k = new Array(r), t = 0; t < r; t++) (o = e[t]) != null && typeof o != "boolean" && typeof o != "function" ? (u = t + f, (o = n.__k[t] = typeof o == "string" || typeof o == "number" || typeof o == "bigint" || o.constructor == String ? G(null, o, null, null, null) : Z(o) ? G(q, { children: o }, null, null, null) : o.constructor == null && o.__b > 0 ? G(o.type, o.props, o.key, o.ref ? o.ref : null, o.__v) : o).__ = n, o.__b = n.__b + 1, d = null, (l = o.__i = da(o, a, u, s)) != -1 && (s--, (d = a[l]) && (d.__u |= 2)), d == null || d.__v == null ? (l == -1 && (r > h ? f-- : r < h && f++), typeof o.type != "function" && (o.__u |= 4)) : l != u && (l == u - 1 ? f-- : l == u + 1 ? f++ : (l > u ? f-- : f++, o.__u |= 4))) : n.__k[t] = null;
+  if (s) for (t = 0; t < h; t++) (d = a[t]) != null && (2 & d.__u) == 0 && (d.__e == i && (i = V(d)), Te(d, d));
   return i;
 }
 function Ce(n, e, a, i) {
@@ -69,10 +69,10 @@ function Ce(n, e, a, i) {
   return e;
 }
 function da(n, e, a, i) {
-  var r, t, o, l = n.key, u = n.type, d = e[a], h = d != null && (2 & d.__u) == 0;
-  if (d === null && n.key == null || h && l == d.key && u == d.type) return a;
+  var r, t, o, d = n.key, u = n.type, l = e[a], h = l != null && (2 & l.__u) == 0;
+  if (l === null && n.key == null || h && d == l.key && u == l.type) return a;
   if (i > (h ? 1 : 0)) {
-    for (r = a - 1, t = a + 1; r >= 0 || t < e.length; ) if ((d = e[o = r >= 0 ? r-- : t++]) != null && (2 & d.__u) == 0 && l == d.key && u == d.type) return o;
+    for (r = a - 1, t = a + 1; r >= 0 || t < e.length; ) if ((l = e[o = r >= 0 ? r-- : t++]) != null && (2 & l.__u) == 0 && d == l.key && u == l.type) return o;
   }
   return -1;
 }
@@ -107,10 +107,10 @@ function me(n) {
     }
   };
 }
-function ie(n, e, a, i, r, t, o, l, u, d) {
+function ie(n, e, a, i, r, t, o, d, u, l) {
   var h, s, f, m, _, k, g, c, p, j, b, S, A, F, D, T, M, x = e.type;
   if (e.constructor != null) return null;
-  128 & a.__u && (u = !!(32 & a.__u), t = [l = e.__e = a.__e]), (h = v.__b) && h(e);
+  128 & a.__u && (u = !!(32 & a.__u), t = [d = e.__e = a.__e]), (h = v.__b) && h(e);
   e: if (typeof x == "function") try {
     if (c = e.props, p = "prototype" in x && x.prototype.render, j = (h = x.contextType) && i[h.__c], b = h ? j ? j.props.value : h.__ : i, a.__c ? g = (s = e.__c = a.__c).__ = s.__E : (p ? e.__c = s = new x(c, b) : (e.__c = s = new $(c, b), s.constructor = x, s.render = ua), j && j.sub(s), s.props = c, s.state || (s.state = {}), s.context = b, s.__n = i, f = s.__d = !0, s.__h = [], s._sb = []), p && s.__s == null && (s.__s = s.state), p && x.getDerivedStateFromProps != null && (s.__s == s.state && (s.__s = C({}, s.__s)), C(s.__s, x.getDerivedStateFromProps(c, s.__s))), m = s.props, _ = s.state, s.__v = e, f) p && x.getDerivedStateFromProps == null && s.componentWillMount != null && s.componentWillMount(), p && s.componentDidMount != null && s.__h.push(s.componentDidMount);
     else {
@@ -131,11 +131,11 @@ function ie(n, e, a, i, r, t, o, l, u, d) {
     } else do
       s.__d = !1, A && A(e), h = s.render(s.props, s.state, s.context), s.state = s.__s;
     while (s.__d && ++F < 25);
-    s.state = s.__s, s.getChildContext != null && (i = C(C({}, i), s.getChildContext())), p && !f && s.getSnapshotBeforeUpdate != null && (k = s.getSnapshotBeforeUpdate(m, _)), T = h, h != null && h.type === q && h.key == null && (T = Ie(h.props.children)), l = Ae(n, Z(T) ? T : [T], e, a, i, r, t, o, l, u, d), s.base = e.__e, e.__u &= -161, s.__h.length && o.push(s), g && (s.__E = s.__ = null);
+    s.state = s.__s, s.getChildContext != null && (i = C(C({}, i), s.getChildContext())), p && !f && s.getSnapshotBeforeUpdate != null && (k = s.getSnapshotBeforeUpdate(m, _)), T = h, h != null && h.type === q && h.key == null && (T = Ie(h.props.children)), d = Ae(n, Z(T) ? T : [T], e, a, i, r, t, o, d, u, l), s.base = e.__e, e.__u &= -161, s.__h.length && o.push(s), g && (s.__E = s.__ = null);
   } catch (z) {
     if (e.__v = null, u || t != null) if (z.then) {
-      for (e.__u |= u ? 160 : 128; l && l.nodeType == 8 && l.nextSibling; ) l = l.nextSibling;
-      t[t.indexOf(l)] = null, e.__e = l;
+      for (e.__u |= u ? 160 : 128; d && d.nodeType == 8 && d.nextSibling; ) d = d.nextSibling;
+      t[t.indexOf(d)] = null, e.__e = d;
     } else {
       for (M = t.length; M--; ) ne(t[M]);
       X(e);
@@ -143,8 +143,8 @@ function ie(n, e, a, i, r, t, o, l, u, d) {
     else e.__e = a.__e, e.__k = a.__k, z.then || X(e);
     v.__e(z, e, a);
   }
-  else t == null && e.__v == a.__v ? (e.__k = a.__k, e.__e = a.__e) : l = e.__e = la(a.__e, e, a, i, r, t, o, u, d);
-  return (h = v.diffed) && h(e), 128 & e.__u ? void 0 : l;
+  else t == null && e.__v == a.__v ? (e.__k = a.__k, e.__e = a.__e) : d = e.__e = la(a.__e, e, a, i, r, t, o, u, l);
+  return (h = v.diffed) && h(e), 128 & e.__u ? void 0 : d;
 }
 function X(n) {
   n && n.__c && (n.__c.__e = !0), n && n.__k && n.__k.forEach(X);
@@ -164,32 +164,32 @@ function ze(n, e, a) {
 function Ie(n) {
   return typeof n != "object" || n == null || n.__b && n.__b > 0 ? n : Z(n) ? n.map(Ie) : C({}, n);
 }
-function la(n, e, a, i, r, t, o, l, u) {
-  var d, h, s, f, m, _, k, g = a.props, c = e.props, p = e.type;
+function la(n, e, a, i, r, t, o, d, u) {
+  var l, h, s, f, m, _, k, g = a.props, c = e.props, p = e.type;
   if (p == "svg" ? r = "http://www.w3.org/2000/svg" : p == "math" ? r = "http://www.w3.org/1998/Math/MathML" : r || (r = "http://www.w3.org/1999/xhtml"), t != null) {
-    for (d = 0; d < t.length; d++) if ((m = t[d]) && "setAttribute" in m == !!p && (p ? m.localName == p : m.nodeType == 3)) {
-      n = m, t[d] = null;
+    for (l = 0; l < t.length; l++) if ((m = t[l]) && "setAttribute" in m == !!p && (p ? m.localName == p : m.nodeType == 3)) {
+      n = m, t[l] = null;
       break;
     }
   }
   if (n == null) {
     if (p == null) return document.createTextNode(c);
-    n = document.createElementNS(r, p, c.is && c), l && (v.__m && v.__m(e, t), l = !1), t = null;
+    n = document.createElementNS(r, p, c.is && c), d && (v.__m && v.__m(e, t), d = !1), t = null;
   }
-  if (p == null) g === c || l && n.data == c || (n.data = c);
+  if (p == null) g === c || d && n.data == c || (n.data = c);
   else {
-    if (t = t && L.call(n.childNodes), g = a.props || U, !l && t != null) for (g = {}, d = 0; d < n.attributes.length; d++) g[(m = n.attributes[d]).name] = m.value;
-    for (d in g) if (m = g[d], d != "children") {
-      if (d == "dangerouslySetInnerHTML") s = m;
-      else if (!(d in c)) {
-        if (d == "value" && "defaultValue" in c || d == "checked" && "defaultChecked" in c) continue;
-        E(n, d, null, m, r);
+    if (t = t && L.call(n.childNodes), g = a.props || U, !d && t != null) for (g = {}, l = 0; l < n.attributes.length; l++) g[(m = n.attributes[l]).name] = m.value;
+    for (l in g) if (m = g[l], l != "children") {
+      if (l == "dangerouslySetInnerHTML") s = m;
+      else if (!(l in c)) {
+        if (l == "value" && "defaultValue" in c || l == "checked" && "defaultChecked" in c) continue;
+        E(n, l, null, m, r);
       }
     }
-    for (d in c) m = c[d], d == "children" ? f = m : d == "dangerouslySetInnerHTML" ? h = m : d == "value" ? _ = m : d == "checked" ? k = m : l && typeof m != "function" || g[d] === m || E(n, d, m, g[d], r);
-    if (h) l || s && (h.__html == s.__html || h.__html == n.innerHTML) || (n.innerHTML = h.__html), e.__k = [];
-    else if (s && (n.innerHTML = ""), Ae(e.type == "template" ? n.content : n, Z(f) ? f : [f], e, a, i, p == "foreignObject" ? "http://www.w3.org/1999/xhtml" : r, t, o, t ? t[0] : a.__k && V(a, 0), l, u), t != null) for (d = t.length; d--; ) ne(t[d]);
-    l || (d = "value", p == "progress" && _ == null ? n.removeAttribute("value") : _ != null && (_ !== n[d] || p == "progress" && !_ || p == "option" && _ != g[d]) && E(n, d, _, g[d], r), d = "checked", k != null && k != n[d] && E(n, d, k, g[d], r));
+    for (l in c) m = c[l], l == "children" ? f = m : l == "dangerouslySetInnerHTML" ? h = m : l == "value" ? _ = m : l == "checked" ? k = m : d && typeof m != "function" || g[l] === m || E(n, l, m, g[l], r);
+    if (h) d || s && (h.__html == s.__html || h.__html == n.innerHTML) || (n.innerHTML = h.__html), e.__k = [];
+    else if (s && (n.innerHTML = ""), Ae(e.type == "template" ? n.content : n, Z(f) ? f : [f], e, a, i, p == "foreignObject" ? "http://www.w3.org/1999/xhtml" : r, t, o, t ? t[0] : a.__k && V(a, 0), d, u), t != null) for (l = t.length; l--; ) ne(t[l]);
+    d || (l = "value", p == "progress" && _ == null ? n.removeAttribute("value") : _ != null && (_ !== n[l] || p == "progress" && !_ || p == "option" && _ != g[l]) && E(n, l, _, g[l], r), l = "checked", k != null && k != n[l] && E(n, l, k, g[l], r));
   }
   return n;
 }
@@ -226,8 +226,8 @@ function ma(n, e, a) {
 L = xe.slice, v = { __e: function(n, e, a, i) {
   for (var r, t, o; e = e.__; ) if ((r = e.__c) && !r.__) try {
     if ((t = r.constructor) && t.getDerivedStateFromError != null && (r.setState(t.getDerivedStateFromError(n)), o = r.__d), r.componentDidCatch != null && (r.componentDidCatch(n, i || {}), o = r.__d), o) return r.__E = r;
-  } catch (l) {
-    n = l;
+  } catch (d) {
+    n = d;
   }
   throw n;
 } }, ve = 0, $.prototype.setState = function(n, e) {
@@ -248,39 +248,39 @@ function ha() {
     function a(t) {
       return Math.floor(Math.abs(t) + 0.5) * (t >= 0 ? 1 : -1);
     }
-    function i(t, o, l) {
-      t = a(t * l), o = a(o * l);
+    function i(t, o, d) {
+      t = a(t * d), o = a(o * d);
       var u = (t - o) * 2;
       u < 0 && (u = -u - 1);
-      for (var d = ""; u >= 32; )
-        d += String.fromCharCode((32 | u & 31) + 63), u /= 32;
-      return d += String.fromCharCode((u | 0) + 63), d;
+      for (var l = ""; u >= 32; )
+        l += String.fromCharCode((32 | u & 31) + 63), u /= 32;
+      return l += String.fromCharCode((u | 0) + 63), l;
     }
     e.decode = function(t, o) {
-      for (var l = 0, u = 0, d = 0, h = [], s = 0, f = 0, m = null, _, k, g = Math.pow(10, Number.isInteger(o) ? o : 5); l < t.length; ) {
+      for (var d = 0, u = 0, l = 0, h = [], s = 0, f = 0, m = null, _, k, g = Math.pow(10, Number.isInteger(o) ? o : 5); d < t.length; ) {
         m = null, s = 1, f = 0;
         do
-          m = t.charCodeAt(l++) - 63, f += (m & 31) * s, s *= 32;
+          m = t.charCodeAt(d++) - 63, f += (m & 31) * s, s *= 32;
         while (m >= 32);
         _ = f & 1 ? (-f - 1) / 2 : f / 2, s = 1, f = 0;
         do
-          m = t.charCodeAt(l++) - 63, f += (m & 31) * s, s *= 32;
+          m = t.charCodeAt(d++) - 63, f += (m & 31) * s, s *= 32;
         while (m >= 32);
-        k = f & 1 ? (-f - 1) / 2 : f / 2, u += _, d += k, h.push([u / g, d / g]);
+        k = f & 1 ? (-f - 1) / 2 : f / 2, u += _, l += k, h.push([u / g, l / g]);
       }
       return h;
     }, e.encode = function(t, o) {
       if (!t.length)
         return "";
-      for (var l = Math.pow(10, Number.isInteger(o) ? o : 5), u = i(t[0][0], 0, l) + i(t[0][1], 0, l), d = 1; d < t.length; d++) {
-        var h = t[d], s = t[d - 1];
-        u += i(h[0], s[0], l), u += i(h[1], s[1], l);
+      for (var d = Math.pow(10, Number.isInteger(o) ? o : 5), u = i(t[0][0], 0, d) + i(t[0][1], 0, d), l = 1; l < t.length; l++) {
+        var h = t[l], s = t[l - 1];
+        u += i(h[0], s[0], d), u += i(h[1], s[1], d);
       }
       return u;
     };
     function r(t) {
-      for (var o = [], l = 0; l < t.length; l++) {
-        var u = t[l].slice();
+      for (var o = [], d = 0; d < t.length; d++) {
+        var u = t[d].slice();
         o.push([u[1], u[0]]);
       }
       return o;
@@ -290,10 +290,10 @@ function ha() {
         throw new Error("Input must be a GeoJSON LineString");
       return e.encode(r(t.coordinates), o);
     }, e.toGeoJSON = function(t, o) {
-      var l = e.decode(t, o);
+      var d = e.decode(t, o);
       return {
         type: "LineString",
-        coordinates: r(l)
+        coordinates: r(d)
       };
     }, n.exports && (n.exports = e);
   })(O)), O.exports;
@@ -473,7 +473,7 @@ var K, fe;
 function bi() {
   if (fe) return K;
   fe = 1;
-  var n = _a, e = va, a = ba, i = $a, r = za, t = Pa, o = qa, l = Ua, u = Ha, d = Za, h = Ka, s = Ja, f = Xa, m = tt, _ = rt, k = dt, g = mt, c = ct, p = _t, j = vt, b = bt, S = $t, A = zt, F = Pt, D = qt, T = Ut, M = Ht, x = Zt, z = Kt, Ve = Jt, Me = Xt, Ue = tn, Ee = on, Ge = ln, He = hn, Ne = pn, Le = vn, Ze = xn, Re = Cn, Oe = Pn, Ke = Vn, We = Gn, Be = Zn, Je = Wn, Ye = Qn, Qe = ti, Xe = oi, ea = ui, aa = ci, ta = yi, na = ji, se = {
+  var n = _a, e = va, a = ba, i = $a, r = za, t = Pa, o = qa, d = Ua, u = Ha, l = Za, h = Ka, s = Ja, f = Xa, m = tt, _ = rt, k = dt, g = mt, c = ct, p = _t, j = vt, b = bt, S = $t, A = zt, F = Pt, D = qt, T = Ut, M = Ht, x = Zt, z = Kt, Ve = Jt, Me = Xt, Ue = tn, Ee = on, Ge = ln, He = hn, Ne = pn, Le = vn, Ze = xn, Re = Cn, Oe = Pn, Ke = Vn, We = Gn, Be = Zn, Je = Wn, Ye = Qn, Qe = ti, Xe = oi, ea = ui, aa = ci, ta = yi, na = ji, se = {
     ar: n,
     ca: e,
     da: a,
@@ -481,9 +481,9 @@ function bi() {
     en: r,
     eo: t,
     es: o,
-    "es-ES": l,
+    "es-ES": d,
     fi: u,
-    fr: d,
+    fr: l,
     he: h,
     hu: s,
     id: f,
@@ -578,27 +578,27 @@ function xi() {
       },
       laneConfig: function(t) {
         if (!t.intersections || !t.intersections[0].lanes) throw new Error("No lanes object");
-        var o = [], l = null;
+        var o = [], d = null;
         return t.intersections[0].lanes.forEach(function(u) {
-          (l === null || l !== u.valid) && (u.valid ? o.push("o") : o.push("x"), l = u.valid);
+          (d === null || d !== u.valid) && (u.valid ? o.push("o") : o.push("x"), d = u.valid);
         }), o.join("");
       },
-      getWayName: function(t, o, l) {
-        var u = l ? l.classes || [] : [];
+      getWayName: function(t, o, d) {
+        var u = d ? d.classes || [] : [];
         if (typeof o != "object") throw new Error("step must be an Object");
         if (!t) throw new Error("No language code provided");
         if (!Array.isArray(u)) throw new Error("classes must be an Array or undefined");
-        var d, h = o.name || "", s = (o.ref || "").split(";")[0];
+        var l, h = o.name || "", s = (o.ref || "").split(";")[0];
         h === o.ref && (h = ""), h = h.replace(" (" + o.ref + ")", "");
         var f = u.indexOf("motorway") !== -1;
         if (h && s && h !== s && !f) {
           var m = e[t][r].phrase["name and ref"] || e.en[r].phrase["name and ref"];
-          d = this.tokenize(t, m, {
+          l = this.tokenize(t, m, {
             name: h,
             ref: s
-          }, l);
-        } else h && s && f && /\d/.test(s) || !h && s ? d = l && l.formatToken ? l.formatToken("ref", s) : s : d = l && l.formatToken ? l.formatToken("name", h) : h;
-        return d;
+          }, d);
+        } else h && s && f && /\d/.test(s) || !h && s ? l = d && d.formatToken ? d.formatToken("ref", s) : s : l = d && d.formatToken ? d.formatToken("name", h) : h;
+        return l;
       },
       /**
        * Formulate a localized text instruction from a step.
@@ -613,25 +613,25 @@ function xi() {
        *
        * @return {string} Localized text instruction.
        */
-      compile: function(t, o, l) {
+      compile: function(t, o, d) {
         if (!t) throw new Error("No language code provided");
         if (n.supportedCodes.indexOf(t) === -1) throw new Error("language code " + t + " not loaded");
         if (!o.maneuver) throw new Error("No step maneuver provided");
-        var u = l || {}, d = o.maneuver.type, h = o.maneuver.modifier, s = o.mode, f = o.driving_side;
-        if (!d)
+        var u = d || {}, l = o.maneuver.type, h = o.maneuver.modifier, s = o.mode, f = o.driving_side;
+        if (!l)
           throw new Error("Missing step maneuver type");
-        if (d !== "depart" && d !== "arrive" && !h)
+        if (l !== "depart" && l !== "arrive" && !h)
           throw new Error("Missing step maneuver modifier");
-        e[t][r][d] || (console.log("Encountered unknown instruction type: " + d), d = "turn");
+        e[t][r][l] || (console.log("Encountered unknown instruction type: " + l), l = "turn");
         var m;
         if (e[t][r].modes[s])
           m = e[t][r].modes[s];
         else {
-          var _ = d === "off ramp" && h.indexOf(f) >= 0;
-          e[t][r][d][h] && !_ ? m = e[t][r][d][h] : m = e[t][r][d].default;
+          var _ = l === "off ramp" && h.indexOf(f) >= 0;
+          e[t][r][l][h] && !_ ? m = e[t][r][l][h] : m = e[t][r][l].default;
         }
         var k;
-        switch (d) {
+        switch (l) {
           case "use lane":
             k = e[t][r].constants.lanes[this.laneConfig(o)], k || (m = e[t][r]["use lane"].no_lanes);
             break;
@@ -659,26 +659,26 @@ function xi() {
         };
         return this.tokenize(t, c, F, u);
       },
-      grammarize: function(t, o, l) {
+      grammarize: function(t, o, d) {
         if (!t) throw new Error("No language code provided");
-        if (l && a && a[t] && a[t][r]) {
-          var u = a[t][r][l];
+        if (d && a && a[t] && a[t][r]) {
+          var u = a[t][r][d];
           if (u) {
-            var d = " " + o + " ", h = a[t].meta.regExpFlags || "";
+            var l = " " + o + " ", h = a[t].meta.regExpFlags || "";
             return u.forEach(function(s) {
               var f = new RegExp(s[0], h);
-              d = d.replace(f, s[1]);
-            }), d.trim();
+              l = l.replace(f, s[1]);
+            }), l.trim();
           }
         }
         return o;
       },
       abbreviations: i,
-      tokenize: function(t, o, l, u) {
+      tokenize: function(t, o, d, u) {
         if (!t) throw new Error("No language code provided");
-        var d = this, h = !1, s = o.replace(/\{(\w+)(?::(\w+))?\}/g, function(f, m, _, k) {
-          var g = l[m];
-          return typeof g > "u" ? f : (g = d.grammarize(t, g, _), k === 0 && e[t].meta.capitalizeFirstLetter && (h = !0, g = d.capitalizeFirstLetter(t, g)), u && u.formatToken && (g = u.formatToken(m, g)), g);
+        var l = this, h = !1, s = o.replace(/\{(\w+)(?::(\w+))?\}/g, function(f, m, _, k) {
+          var g = d[m];
+          return typeof g > "u" ? f : (g = l.grammarize(t, g, _), k === 0 && e[t].meta.capitalizeFirstLetter && (h = !0, g = l.capitalizeFirstLetter(t, g)), u && u.formatToken && (g = u.formatToken(m, g)), g);
         }).replace(/ {2}/g, " ");
         return !h && e[t].meta.capitalizeFirstLetter ? this.capitalizeFirstLetter(t, s) : s;
       }
@@ -718,29 +718,29 @@ demo only, and will sometimes not be available, or work in unexpected ways.
 Please set up your own OSRM server, or use a paid service provider for production.`);
   }
   route(e, a, i, r) {
-    let t, o, l;
-    r = Object.assign({}, this.options.routingOptions, r), t = this.buildRouteUrl(e, r), this.options.requestParameters && (t += Object.keys(this.options.requestParameters).reduce(
-      function(d, h, s) {
-        return d + (s > 0 ? "&" : "") + h + "=" + window.encodeURIComponent(this.options.requestParameters[h]);
+    let t, o, d, u;
+    r = Object.assign({}, this.options.routingOptions, r), u = this.options, t = this.buildRouteUrl(e, r), console.log(u), u.requestParameters && (t += Object.keys(u.requestParameters).reduce(
+      function(h, s, f) {
+        return h + (f > 0 ? "&" : "") + s + "=" + window.encodeURIComponent(u.requestParameters[s]);
       },
       t.indexOf("?") >= 0 ? "&" : "?"
     )), o = !1;
-    const u = setTimeout(() => {
+    const l = setTimeout(() => {
       o = !0, a.call(i || a, {
         status: -1,
         message: "OSRM request timed out."
       });
     }, this.options.timeout);
-    l = [];
-    for (let d = 0; d < e.length; d++) {
-      let h = e[d];
-      l.push(new I(h.lngLat, h.name, h.options));
+    d = [];
+    for (let h = 0; h < e.length; h++) {
+      let s = e[h];
+      d.push(new I(s.lngLat, s.name, s.options));
     }
-    return window.fetch(t).then((d) => {
-      if (clearTimeout(u), !o)
-        return d.json();
-    }).then((d) => this._routeDone(d, l, r, a, i)).catch((d) => {
-      a.call(i || a, d);
+    return window.fetch(t).then((h) => {
+      if (clearTimeout(l), !o)
+        return h.json();
+    }).then((h) => this._routeDone(h, d, r, a, i)).catch((h) => {
+      a.call(i || a, h);
     });
   }
   _routeDone(e, a, i, r, t) {
@@ -752,16 +752,16 @@ Please set up your own OSRM server, or use a paid service provider for productio
         });
         return;
       }
-      let l = this._toWaypoints(a, e.waypoints);
+      let d = this._toWaypoints(a, e.waypoints);
       for (let u = 0; u < e.routes.length; u++) {
-        let d = this._convertRoute(e.routes[u]);
-        d.inputWaypoints = a, d.waypoints = l, d.properties = { isSimplified: !i || !i.geometryOnly || i.simplifyGeometry }, o.push(d);
+        let l = this._convertRoute(e.routes[u]);
+        l.inputWaypoints = a, l.waypoints = d, l.properties = { isSimplified: !i || !i.geometryOnly || i.simplifyGeometry }, o.push(l);
       }
       this._saveHintData(e.waypoints, a);
-    } catch (l) {
+    } catch (d) {
       throw {
         status: -3,
-        message: l.toString()
+        message: d.toString()
       };
     }
     r.call(t, null, o);
@@ -775,7 +775,7 @@ Please set up your own OSRM server, or use a paid service provider for productio
         totalDistance: e.distance,
         totalTime: e.duration
       }
-    }, i = [], r = [], t = 0, o = e.legs.length, l = e.legs[0].steps.length > 0, u, d, h, s, f, m, _, k, g, c;
+    }, i = [], r = [], t = 0, o = e.legs.length, d = e.legs[0].steps.length > 0, u, l, h, s, f, m, _, k, g, c;
     if (this.options.stepToText)
       c = this.options.stepToText;
     else {
@@ -783,8 +783,8 @@ Please set up your own OSRM server, or use a paid service provider for productio
       c = p.compile.bind(p, this.options.language);
     }
     for (u = 0; u < o; u++)
-      for (h = e.legs[u], i.push(h.summary && h.summary.charAt(0).toUpperCase() + h.summary.substring(1)), d = 0; d < h.steps.length; d++)
-        s = h.steps[d], f = this._decodePolyline(s.geometry), m = f && f.length > 0 ? f[0] : null, a.coordinates = [...a.coordinates, ...f], _ = this._maneuverToInstructionType(s.maneuver, u === o - 1), k = this._maneuverToModifier(s.maneuver), g = c(s), _ && ((u == 0 && s.maneuver.type == "depart" || s.maneuver.type == "arrive") && r.push(t), a.instructions.push({
+      for (h = e.legs[u], i.push(h.summary && h.summary.charAt(0).toUpperCase() + h.summary.substring(1)), l = 0; l < h.steps.length; l++)
+        s = h.steps[l], f = this._decodePolyline(s.geometry), m = f && f.length > 0 ? f[0] : null, a.coordinates = [...a.coordinates, ...f], _ = this._maneuverToInstructionType(s.maneuver, u === o - 1), k = this._maneuverToModifier(s.maneuver), g = c(s), _ && ((u == 0 && s.maneuver.type == "depart" || s.maneuver.type == "arrive") && r.push(t), a.instructions.push({
           type: _,
           distance: s.distance,
           time: s.duration,
@@ -797,7 +797,7 @@ Please set up your own OSRM server, or use a paid service provider for productio
           text: g,
           coordinate: m
         })), t += f.length;
-    return a.name = i.join(", "), l ? a.waypointIndices = r : a.coordinates = this._decodePolyline(e.geometry), a;
+    return a.name = i.join(", "), d ? a.waypointIndices = r : a.coordinates = this._decodePolyline(e.geometry), a;
   }
   _bearingToDirection(e) {
     let a = Math.round(e / 45) % 8;
@@ -868,9 +868,9 @@ Please set up your own OSRM server, or use a paid service provider for productio
   }
   buildRouteUrl(e, a) {
     let i = [], r = [], t = !0, o = !0;
-    for (let l = 0; l < e.length; l++) {
-      let d = e[l].lngLat;
-      i.push(d[0] + "," + d[1]), r.push(this._hints.locations[this._locationKey(d)] || "");
+    for (let d = 0; d < e.length; d++) {
+      let l = e[d].lngLat;
+      i.push(l[0] + "," + l[1]), r.push(this._hints.locations[this._locationKey(l)] || "");
     }
     return this.options.serviceUrl + "/" + this.options.profile + "/" + i.join(";") + "?" + (a.geometryOnly ? a.simplifyGeometry ? "" : "overview=full" : "overview=false") + "&alternatives=" + o.toString() + "&steps=" + t.toString() + (this.options.useHints ? "&hints=" + r.join(";") : "") + (a.allowUTurns ? "&continue_straight=" + !a.allowUTurns : "");
   }
@@ -889,11 +889,11 @@ Please set up your own OSRM server, or use a paid service provider for productio
 var Ci = 0;
 function y(n, e, a, i, r, t) {
   e || (e = {});
-  var o, l, u = e;
-  if ("ref" in u) for (l in u = {}, e) l == "ref" ? o = e[l] : u[l] = e[l];
-  var d = { type: n, props: u, key: a, ref: o, __k: null, __: null, __b: 0, __e: null, __c: null, constructor: void 0, __v: --Ci, __i: -1, __u: 0, __source: r, __self: t };
-  if (typeof n == "function" && (o = n.defaultProps)) for (l in o) u[l] === void 0 && (u[l] = o[l]);
-  return v.vnode && v.vnode(d), d;
+  var o, d, u = e;
+  if ("ref" in u) for (d in u = {}, e) d == "ref" ? o = e[d] : u[d] = e[d];
+  var l = { type: n, props: u, key: a, ref: o, __k: null, __: null, __b: 0, __e: null, __c: null, constructor: void 0, __v: --Ci, __i: -1, __u: 0, __source: r, __self: t };
+  if (typeof n == "function" && (o = n.defaultProps)) for (d in o) u[d] === void 0 && (u[d] = o[d]);
+  return v.vnode && v.vnode(l), l;
 }
 const zi = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAApCAYAAADAk4LOAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAN1wAADdcBQiibeAAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAUlSURBVFjDrZdLiBxVFIb/e289uqt6kkx6zIiIoKgLRReKuMhCcaOIAUEIiCCE4CIPggZ8kBjooPgM0TiYEUUjqBGchZqAQlyYRTA+kJiJQiJGMjN5zYzT3dP1rrr3HBeTjDGTSfc8Dvyruud89Z9z6kIJdBj31763MivsJXKuZYF6dak5++2mh7NOcsXVHq6sHbhOK/24kOJJMO4AE1vKygwZhxlKSHGKiD+RSu09vOXB43OCrHz96y6T2lsh+OmKXzFdlbLne2UopSAupBhjECcZgjDMgiiSxPhcK/nCr1sfOtcWcm/tq9uEsL4rl0vdK67pKVu2jUwTMk0wBBAzpBCQAnAtiZIlwWQwPlHPglZQAFj1Y23VwVkh92zbd59U+Kanp+p2L12mooKQ5AbcpuclS6LiKoRhxOfHzhXMcs3PtVV7Z0DufXH/LSzpSG9vr1/p6kIz0dDUrvx/IYXAsrJCkWc4e/Z0Zpgf+KX26A/TkNtrXziesY9Xq8tvWNZdVfVYg7hzwKVv3O3ZiKMWj46OTrq5fdOh1x5pSADwjdzo2nbv0u6qqkca2jCIMGcZAuqRhu8vEX7ZK2V2WgMAcXdtvyeKbPS662+osCohzMycHVweniNREoShoZO5KYobpciSh23bFq7rIUgNiLFghRkBlg2v7GlpiccsCHrcryzxUk3zmsNskeYGvt/lxVH4hMWEu9xSWaQFYQ7L1B6iGZ5bBoy+zWKiHiltFHpqeIsVhWaosg1iqlgg4wAAEYEXsV3EmNppJmExMFYUxfVSuIs6E0sI5FkBBhLJzH9laQxLSjBj0WQJgSJPweDTkknvS4JGbCuxKOt7UY4lEQfNnAu9TzLxN2nUdAQTLAEw8YIlAVgAkmDCSBL75eCutSeY+GTUqqNkqUVxUbIl4qgJo4vWzecrhyQAMJldYf1MXLLl1EIsYBZgoGwpRI2zMTPtGBhYbSQAlJF9lieRzNMIriVBzPOWawvoIkYaNC0u9IcAIAHgp75NLQl8ENbPZJ6jgAU48RyFqHEuZyE+Pda/vjENAQBD5s209Y+kPJlyM4+r3lUS0AWSyVEhpHnjYu1pyO+7N4ywwPvhxHDiuwo8j1b5rkQwMZIziYHBXetPzIAAgIV8exZOSMoieI6aU5vKtgR0jqw1JtiYbZfW/R/kSN+mcWbxdtwYjn1XTd9B7cQAfNdCWB/OhBR7jvWv/3tWCAAoO3ktjyZZJ0HHbsq2AooERVQXzPKly2vOgPz29jNNBr+e1IcSz5YAM4hmFzPDtyWS+lDK4N2DfU+dbgsBAFHyd+oszE3agt/GjWcrUBEjj5sQBb96pXpXhAzueDJi4u1p41TsuQpCiFln4bkKeXMoJeadg++tG+sYAgBBXOo3RRrruAnfkWDmGfIdCeQhiiQgQbxjtlqzQk59vCZlNluL5lDiORLyMjcA4DsKeXM4AfDKxa97ThAAqPaMfaR1Nq6jOiqOAhOm5TsKJg1QZGGRedY7V6tzVcjBWk1D0JZ8cigt2RJSimkXnqOgW8MxQLUTb6wN5g0BgGPV0c9BekTH41xx5YXrQ8FkTRgdpxU7ea9djbYQ1GokmJ43wUhWtgRcS04tQjAcw9CWw29tThYOAXD03XVfMps/TTTOy30blDZgiqxFK6p7OsnvCDJ1UD9LyUjORoPDkUQyPfdHbXW+qJCjfRsOwOAoNY4z6Xz01rHq3k5zO4ZMHTabYSIhJD87MLB64f8Ys8WdG/tfBljMJedfwY+s/2P4Pv8AAAAASUVORK5CYII=", Ii = new w.style.Style({
   image: new w.style.Icon({
@@ -961,9 +961,9 @@ function Pi() {
       for (var r = 1; r < arguments.length; ++r)
         i[r - 1] = arguments[r];
     }
-    return (!i || !i.hasOwnProperty) && (i = {}), a.replace(n, function(o, l, u) {
-      var d;
-      return a[u - 1] === "{" && a[u + o.length] === "}" ? l : (d = i.hasOwnProperty(l) ? i[l] : null, d ?? "");
+    return (!i || !i.hasOwnProperty) && (i = {}), a.replace(n, function(o, d, u) {
+      var l;
+      return a[u - 1] === "{" && a[u + o.length] === "}" ? d : (l = i.hasOwnProperty(d) ? i[d] : null, l ?? "");
     });
   }
   return B;
@@ -984,24 +984,24 @@ const Di = /* @__PURE__ */ oe(Fi), Fe = {
 };
 function J(n, e, a) {
   a = a || Fe, e = e || a.roundingSensitivity;
-  const i = a.unitNames, r = e <= 0, t = r ? function(l) {
-    return l;
+  const i = a.unitNames, r = e <= 0, t = r ? function(d) {
+    return d;
   } : qi;
   let o;
   if (a.units === "imperial") {
-    const l = n / 0.9144;
-    l >= 1e3 ? o = {
+    const d = n / 0.9144;
+    d >= 1e3 ? o = {
       value: t(n / 1609.344, e),
       unit: i.miles
     } : o = {
-      value: t(l, e),
+      value: t(d, e),
       unit: i.yards
     };
   } else {
-    let l = t(n, e);
+    let d = t(n, e);
     o = {
-      value: l >= 1e3 ? l / 1e3 : l,
-      unit: l >= 1e3 ? i.kilometers : i.meters
+      value: d >= 1e3 ? d / 1e3 : d,
+      unit: d >= 1e3 ? i.kilometers : i.meters
     };
   }
   return r && (o.value = o.value.toFixed(-e)), Di(a.distanceTemplate, o);
@@ -1056,7 +1056,7 @@ class Vi extends $ {
       if (r === this.layer) {
         if (this.props.selected) {
           if (this.props.onClick) {
-            const t = this.props.route, o = w.proj.toLonLat(e.coordinate), l = new CustomEvent(
+            const t = this.props.route, o = w.proj.toLonLat(e.coordinate), d = new CustomEvent(
               "click",
               {
                 detail: {
@@ -1065,7 +1065,7 @@ class Vi extends $ {
                 }
               }
             );
-            this.props.onClick(l);
+            this.props.onClick(d);
           }
         } else if (this.props.onSelected) {
           const t = new CustomEvent("selected", { detail: { route: this.props.route } });
@@ -1087,12 +1087,12 @@ class Vi extends $ {
       if (r === this.layer) {
         const t = this.props.map, o = this.props.route;
         t.un("pointerdrag", this.onDrag, this);
-        const l = w.proj.toLonLat(e.coordinate), u = new CustomEvent(
+        const d = w.proj.toLonLat(e.coordinate), u = new CustomEvent(
           "dragging",
           {
             detail: {
-              afterWpIndex: _e(o, l),
-              lngLat: l
+              afterWpIndex: _e(o, d),
+              lngLat: d
             }
           }
         );
@@ -1282,15 +1282,15 @@ let Hi = class extends $ {
   }
   dragWaypoint(e, a, i) {
     this.state.routeDebounce && clearTimeout(this.state.routeDebounce);
-    const r = +/* @__PURE__ */ new Date(), t = (this.lastRouteTimestamp || r) + this.routeInterval, o = Math.max(0, t - r), l = setTimeout(() => {
-      const u = this.state.waypoints.slice(), d = new I(
+    const r = +/* @__PURE__ */ new Date(), t = (this.lastRouteTimestamp || r) + this.routeInterval, o = Math.max(0, t - r), d = setTimeout(() => {
+      const u = this.state.waypoints.slice(), l = new I(
         e.detail.lngLat,
         i ? u[a].name : null,
         u[a].options
       );
-      u[a] = d;
+      u[a] = l;
       const h = { waypoints: u };
-      i || (h.draggedWaypoint = null), this.waypointsUpdated = Math.abs(e.detail.lngLat[0] - d.lngLat[0]) > 1e-3 || Math.abs(e.detail.lngLat[0] - d.lngLat[1]) > 1e-3, this.setState(h), this.waypointsListener && setTimeout(
+      i || (h.draggedWaypoint = null), this.waypointsUpdated = Math.abs(e.detail.lngLat[0] - l.lngLat[0]) > 1e-3 || Math.abs(e.detail.lngLat[0] - l.lngLat[1]) > 1e-3, this.setState(h), this.waypointsListener && setTimeout(
         () => {
           const s = new CustomEvent(
             "waypointsUpdate",
@@ -1303,7 +1303,7 @@ let Hi = class extends $ {
         0
       );
     }, o);
-    this.setState({ routeDebounce: l });
+    this.setState({ routeDebounce: d });
   }
   selectRoute(e) {
     this.setState({ selectedRoute: e }), this.routesListener && setTimeout(
@@ -1535,19 +1535,19 @@ class Wi extends Oi {
       e
     );
     t.target || (t.target = this.eventTarget_ || this);
-    const o = this.dispatching_ || (this.dispatching_ = {}), l = this.pendingRemovals_ || (this.pendingRemovals_ = {});
-    i in o || (o[i] = 0, l[i] = 0), ++o[i];
+    const o = this.dispatching_ || (this.dispatching_ = {}), d = this.pendingRemovals_ || (this.pendingRemovals_ = {});
+    i in o || (o[i] = 0, d[i] = 0), ++o[i];
     let u;
-    for (let d = 0, h = r.length; d < h; ++d)
-      if ("handleEvent" in r[d] ? u = /** @type {import("../events.js").ListenerObject} */
-      r[d].handleEvent(t) : u = /** @type {import("../events.js").ListenerFunction} */
-      r[d].call(this, t), u === !1 || t.propagationStopped) {
+    for (let l = 0, h = r.length; l < h; ++l)
+      if ("handleEvent" in r[l] ? u = /** @type {import("../events.js").ListenerObject} */
+      r[l].handleEvent(t) : u = /** @type {import("../events.js").ListenerFunction} */
+      r[l].call(this, t), u === !1 || t.propagationStopped) {
         u = !1;
         break;
       }
     if (--o[i] === 0) {
-      let d = l[i];
-      for (delete l[i]; d--; )
+      let l = d[i];
+      for (delete d[i]; l--; )
         this.removeEventListener(i, ee);
       delete o[i];
     }
@@ -1595,8 +1595,8 @@ class Wi extends Oi {
 function N(n, e, a, i, r) {
   if (r) {
     const o = a;
-    a = function(l) {
-      return n.removeEventListener(e, a), o.call(i ?? this, l);
+    a = function(d) {
+      return n.removeEventListener(e, a), o.call(i ?? this, d);
     };
   } else i && i !== n && (a = a.bind(i));
   const t = {
