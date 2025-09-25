@@ -13,6 +13,7 @@ export default class Control extends Component {
         this.lastRouteTimestamp = +new Date();
         this.waypointsListener = options.onWaypointsUpdate ? options.onWaypointsUpdate : null;
         this.routesListener = options.onRoutesUpdate ? options.onRoutesUpdate : null;
+        this.itineraryStepListener = options.onItineraryStepClick ? options.onItineraryStepClick : null;
 
         this.state = {
             waypoints: options.waypoints,
@@ -220,6 +221,7 @@ export default class Control extends Component {
                             map={props.map}
                             route={route}
                             selected={state.selectedRoute === route}
+                            onItineraryStepSelected={this.itineraryStepListener}
                             onSelected={() => this.selectRoute(route)}
                         />
                     </Fragment>

@@ -54,6 +54,7 @@ export default class OSRMv1 {
         url = this.buildRouteUrl(waypoints, options);
         if (generalOptions.requestParameters) {
             url += Object.keys(generalOptions.requestParameters).reduce(
+                /* eslint-disable prefer-arrow-callback */
                 function (carry, param, idx) {
                     return carry +
                         (idx > 0 ? '&' : '') +

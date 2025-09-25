@@ -30,6 +30,7 @@ olrm.Control(options)
 | geocoder                         | Object                    | Optional |
 | waypointsListener                | function(event) { }       | Optional |
 | routesListener                   | function(event) { }       | Optional |
+| itineraryStepListener            | function(event) { }       | Optional |
 | router                           | new olrm.OSRMv1() {}      | Optional |
 | suppressDemoServerWarning        | boolean                   | Optional |
 | serviceUrl                       | string                    | Optional |

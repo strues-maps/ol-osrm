@@ -13,6 +13,7 @@ export default class ControlWrapper extends Component {
                 geocoder={props.geocoder}
                 onWaypointsUpdate={props.waypointsListener}
                 onRoutesUpdate={props.routesListener}
+                onItineraryStepClick={props.itineraryStepListener}
             />
         </div>;
     }
