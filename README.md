@@ -10,11 +10,25 @@ This plugin was developed by porting relevant parts from openlayers-routing-mach
 OpenLayers4 by Per Liedman. OpenLayers4 plugin was available at https://github.com/perliedman/openlayers-routing-machine .
 
 
+Installing plugin from npm repository
+=======================
+- `$ npm install ol-osrm`
+
+
 Building plugin locally
 =======================
 - `$ npm install # install dependancies`
 - `$ npx eslint src # lint the codebase`
 - `$ npm run build # build distribution folder`
+
+
+Using plugin from content delivery network
+=======================
+Add following lines to HTML head:
+
+`<link href="https://unpkg.com/ol-osrm@1.0.7/dist/olrm.css" rel="stylesheet">`
+
+`<script src="https://unpkg.com/ol-osrm@1.0.7/dist/olrm.umd.js"></script>`
 
 
 Plugin configuration
