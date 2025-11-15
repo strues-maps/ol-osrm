@@ -1,8 +1,8 @@
-**OSRM Routing plugin for OpenLayers >=8.0.0**
+**OSRM Routing plugin for OpenLayers >=8.0.0, <=10.* **
 
 Routing with OSRM
 =================
-This plugin is available for OpenLayers version >=8.0.0 and is under active development.
+This plugin is available for OpenLayers version >=8.0.0, <=10.* and is under active development.
 Plugin source code is available at https://github.com/strues-maps/ol-osrm .
 This plugin is licensed under ISC.
 

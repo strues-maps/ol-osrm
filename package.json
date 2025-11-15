@@ -1,10 +1,10 @@
 {
     "name": "ol-osrm",
-    "version": "1.0.7",
+    "version": "1.0.8",
     "author": "strues-maps <info@strues-maps.lt>",
     "type": "module",
     "keywords": ["OpenLayers", "Routing", "OpenStreetMap", "Open Source Routing Machine", "OSM", "OSRM"],
-    "description": "OSRM Routing plugin for OpenLayers >=8.0.0",
+    "description": "OSRM Routing plugin for OpenLayers >=8.0.0, <=10.*.*",
     "license": "ISC",
     "bugs": {
         "url": "https://github.com/strues-maps/ol-osrm/issues"
