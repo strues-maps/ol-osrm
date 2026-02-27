@@ -1,0 +1,161 @@
+direction: right
+
+ControlWrapper: {
+    shape: class
+    render(props): DOM
+    style: {
+        text-transform: none
+    }
+}
+
+Control: {
+    shape: class
+    routeInterval: int
+    waypointsUpdated: boolean
+    lastRouteTimestamp: Date
+    waypointsListener: function
+    routesListener: function
+    itineraryStepListener: function
+    state: array
+    routeReceived: function
+
+    constructor(array options): void
+    componentDidMount(): void
+    shouldComponentUpdate(array nextProps, array nextState): boolean
+    routeReceived(Exception err, array newRoutes): void
+    dragWaypoint(CustomEvent e, int i, boolean dragging): void
+    selectRoute(object route): void
+    setWaypoint(int i, object data): void
+    addDraggingWaypoint(int afterWpIndex, object lngLat): void
+    render(array props, array state): DOM
+    style: {
+        text-transform: none
+    }
+}
+
+Geocoder: {
+    shape: class
+    state: array
+    reverseGeocode: function
+    keydown: function
+    input: function
+
+    constructor(array options): void
+    shouldComponentUpdate(array nextProps, array nextState): boolean
+    keydown(Event e): void
+    input(Event e): void
+    changeSelection(int direction): void
+    geocode(Event e): boolean
+    reverseGeocode(): void
+    selectSuggestion(object suggestion): void
+    render(array props, array state): DOM
+    style: {
+        text-transform: none
+    }
+}
+
+Itinerary: {
+    shape: class
+    state: array
+    formatDuration: function
+    formatDistance: function
+    itineraryStepListener: function
+    onStepSelected: function
+    state: array
+    feature: ol.Feature
+    layer: ol.layer.Vector
+
+    constructor(array options): void
+    shouldComponentUpdate(array nextProps, array nextState): void
+    componentWillUnmount(): void
+    onRouteClicked(): boolean
+    onStepClicked (Event event, int i): boolean
+    onStepSelected(Event e, int i): boolean
+    render(array props, array state): DOM
+    style: {
+        text-transform: none
+    }
+}
+
+Marker: {
+    shape: class
+    layer: ol.layer.Vector
+    onDown: function
+    drag: function
+    dragEnd: function
+    setCoordinate: function
+
+    constructor(array options): void
+    componentDidUpdate(array prevProps): void
+    componentWillUnmount(): void
+    onDown(Event e): void
+    drag(Event e): void
+    dragEnd(Event e): void
+    setCoordinate(ol\.geom\.Point coordinate)
+    style: {
+        text-transform: none
+    }
+}
+
+RouteLine: {
+    shape: class
+    props: array
+    state: array
+    style: ol.style.Style
+    line: ol.Feature
+    layer: ol.layer.Vector
+    onClick: function
+    onPointerDown: function
+    onDrag: function
+
+    constructor(array options): void
+    componentWillUnmount(): void
+    shouldComponentUpdate(array nextProps): void
+    getStyle(boolean selected): ol.style.Style
+    onClick(Event e): boolean
+    onPointerDown(Event e): void
+    onDrag(Event e): void
+    style: {
+        text-transform: none
+    }
+}
+
+ControlWrapper <- Control: has {
+    source-arrowhead.shape: diamond
+    style {
+        stroke: black
+        filled: false
+    }
+}
+
+Control <- Marker: has {
+    source-arrowhead.shape: diamond
+    style {
+        stroke: black
+        filled: false
+    }
+}
+
+Control <- Geocoder: has {
+    source-arrowhead.shape: diamond
+    style {
+        stroke: black
+        filled: false
+    }
+}
+
+Control <- RouteLine: has {
+    source-arrowhead.shape: diamond
+    style {
+        stroke: black
+        filled: false
+    }
+}
+
+Control <- Itinerary: has {
+    source-arrowhead.shape: diamond
+    style {
+        stroke: black
+        filled: false
+    }
+}

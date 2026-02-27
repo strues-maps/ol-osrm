@@ -82,6 +82,12 @@ files from `./dist` folder that is generated using `npm run build` command.
 ![route example](examples/example.png)
 
 
+Class diagram
+=============
+
+![class diagram](diagrams/class.png)
+
+
 Found a bug?
 ===================================
 If you found a bug, feel free to report it at https://github.com/strues-maps/ol-osrm/issues
